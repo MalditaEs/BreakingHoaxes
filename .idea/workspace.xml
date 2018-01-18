@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18dce6ef-2963-4e73-9f02-7be43ead220b" name="Default" comment="Add fields to Information, export source types">
+    <list default="true" id="18dce6ef-2963-4e73-9f02-7be43ead220b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Information.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Information.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Source.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Source.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/SourceTypes.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/SourceTypes.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php" />
-      <change beforePath="$PROJECT_DIR$/web/js/dashboard.js" afterPath="$PROJECT_DIR$/web/js/dashboard.js" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="46" column="70" lean-forward="false" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
+            <state relative-caret-position="188">
+              <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding>
                 <element signature="e#40#67#0#PHP" expanded="true" />
                 <element signature="e#1031#1060#0#PHP" expanded="true" />
@@ -91,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <marker date="1516287925000" expanded="true" signature="1472:1714" ph="..." />
                 <marker date="1516287925000" expanded="true" signature="1520:1600" ph="..." />
@@ -165,12 +161,12 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/selector.html.twig" />
         <option value="$PROJECT_DIR$/web/dashboard.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/SourceTypes.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Source.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Information.php" />
         <option value="$PROJECT_DIR$/web/js/dashboard.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
       </list>
     </option>
   </component>
@@ -474,7 +470,7 @@
       <option name="presentableId" value="Default" />
       <updated>1516274754622</updated>
       <workItem from="1516274765528" duration="2321000" />
-      <workItem from="1516277198873" duration="5297000" />
+      <workItem from="1516277198873" duration="5410000" />
     </task>
     <task id="LOCAL-00001" summary="Basic dashboard structure">
       <created>1516278135630</created>
@@ -497,11 +493,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516282267417</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add fields to Information, export source types">
+      <created>1516287937975</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1516287937975</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7618000" />
+    <option name="totallyTimeSpent" value="7731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1680" height="999" extended-state="6" />
@@ -573,7 +576,8 @@
     <MESSAGE value="Basic dashboard structure" />
     <MESSAGE value="Dashboard js" />
     <MESSAGE value="Add missing endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add missing endpoint" />
+    <MESSAGE value="Add fields to Information, export source types" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add fields to Information, export source types" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -710,17 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="46" column="70" lean-forward="false" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-            <element signature="e#1031#1060#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
@@ -761,12 +754,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <marker date="1516287925000" expanded="true" signature="1472:1714" ph="..." />
             <marker date="1516287925000" expanded="true" signature="1520:1600" ph="..." />
             <marker date="1516287925000" expanded="true" signature="1645:1693" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+            <element signature="e#1031#1060#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

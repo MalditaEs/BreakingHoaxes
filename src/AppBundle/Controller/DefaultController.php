@@ -51,4 +51,17 @@ class DefaultController extends Controller
 		return new Response($serializer->serialize($infos, "json", $context));
 	}
 
+	/**
+	 * @Route("/dashboard/{eventId}/data/information/{id}", name="information")
+	 * @param Request $request
+	 */
+	public function infoAction(Request $request, $id){
+		$em = $this->get( 'doctrine' )->getManager();
+		$infos = $em->getRepository( 'AppBundle:Information' )->findOneById( $id );
+
+		$context = SerializationContext::create()->setGroups(array('data'));
+		$serializer = $this->get('jms_serializer');
+		return new Response($serializer->serialize($infos, "json", $context));
+	}
+
 }
