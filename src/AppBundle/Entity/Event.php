@@ -55,6 +55,12 @@ class Event
 	 */
 	private $informations;
 
+	/**
+	 * @var
+	 * @ORM\Column(type="string", length=255)
+	 */
+	private $image;
+
 	public function __construct() {
 		$this->sources = new ArrayCollection();
 		$this->informations = new ArrayCollection();
@@ -170,5 +176,7 @@ class Event
 	{
 		return $this->closedAt;
 	}
+
+
 }
 

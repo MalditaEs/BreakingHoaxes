@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard {{ event.name }}{% endblock %}
+
+{% block body %}
+
+    <header id="dashboard-header">
+        <h1>{{ event.name }}</h1>
+    </header>
+
+    <div class="content">
+
+        <div id="sources">
+            <header>Fuentes</header>
+
+            <div class="sources-mb sources-wrap">
+                <h5>Fuentes oficiales</h5>
+                {% for source in event.sources %}
+                    <img class="image-source" src="{{ source.image }}" width="48" data-source-id="{{ source.id }}" data-show="1"/>
+                {% endfor %}
+            </div>
+
+            <div class="sources-official"></div>
+
+            <div class="sources-newroom"></div>
+
+        </div>
+
+        <div id="information">
+            <header>Información</header>
+            <div id="data-displayer">
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}" />
+{% endblock %}
+{% block javascripts %}
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+{% endblock %}

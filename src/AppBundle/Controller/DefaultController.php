@@ -23,4 +23,17 @@ class DefaultController extends Controller
 		return $this->render('default/selector.html.twig', array("events" => $events));
 	}
 
+	/**
+	 * @Route("/dashboard/{eventId}", name="dashboard")
+	 * @param Request $request
+	 */
+	public function dashboardAction(Request $request, $eventId){
+
+		$em = $this->get( 'doctrine' )->getManager();
+		/** @var Event $event */
+		$event = $em->getRepository( 'AppBundle:Event' )->findOneById($eventId);
+
+		return $this->render('default/dashboard.html.twig', array("event" => $event));
+	}
+
 }

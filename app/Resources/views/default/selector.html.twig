@@ -6,7 +6,7 @@
     <div id="selector">
 
         {% for event in events %}
-            <a href="">
+            <a href="{{ path('dashboard', {'eventId' : event.id }) }}">
                 <div class="event">
                     <p class="event-name">{{ event.name }}</p>
                     <p class="event-date">Abierto el {{ event.createdAt|date("d/m/Y") }}</p>
