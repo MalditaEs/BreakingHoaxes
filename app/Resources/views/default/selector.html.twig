@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Selector de eventos{% endblock %}
+{% block body %}
+
+    <div id="selector">
+
+        {% for event in events %}
+            <a href="">
+                <div class="event">
+                    <p class="event-name">{{ event.name }}</p>
+                    <p class="event-date">Abierto el {{ event.createdAt|date("d/m/Y") }}</p>
+                </div>
+            </a>
+        {% endfor %}
+
+
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}" />
+{% endblock %}
