@@ -13,16 +13,35 @@
         <div id="sources">
             <header>Fuentes</header>
 
-            <div class="sources-mb sources-wrap">
+            <div class="sources-official sources-wrap">
                 <h5>Fuentes oficiales</h5>
                 {% for source in event.sources %}
-                    <img class="image-source" src="{{ source.image }}" width="48" data-source-id="{{ source.id }}" data-show="1"/>
+                    {% if source.credibility.id == 1 %}
+                        <img class="image-source" src="{{ source.image }}" width="48" data-source-id="{{ source.id }}"
+                             data-show="1"/>
+                    {% endif %}
                 {% endfor %}
             </div>
 
-            <div class="sources-official"></div>
+            <div class="sources-mb">
+                <h5>Fuentes aprobadas medios</h5>
+                {% for source in event.sources %}
+                    {% if source.credibility.id == 2 %}
+                        <img class="image-source" src="{{ source.image }}" width="48" data-source-id="{{ source.id }}"
+                             data-show="1"/>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-            <div class="sources-newroom"></div>
+            <div class="sources-newroom">
+                <h5>Fuentes aprobadas pie de calle</h5>
+                {% for source in event.sources %}
+                    {% if source.credibility.id == 3 %}
+                        <img class="image-source" src="{{ source.image }}" width="48" data-source-id="{{ source.id }}"
+                             data-show="1"/>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
         </div>
 
@@ -38,11 +57,12 @@
 {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}"/>
 {% endblock %}
 {% block javascripts %}
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
+    <script id="dashboard-js" data-dashboard="{{ event.id }}" src="{{ asset('js/dashboard.js') }}"></script>
 {% endblock %}
