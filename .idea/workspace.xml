@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18dce6ef-2963-4e73-9f02-7be43ead220b" name="Default" comment="Basic dashboard structure">
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/dashboard.js" />
+    <list default="true" id="18dce6ef-2963-4e73-9f02-7be43ead220b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,14 +18,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="33" column="80" lean-forward="false" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="80" />
+            <state relative-caret-position="720">
+              <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
               <folding>
                 <element signature="e#40#67#0#PHP" expanded="true" />
-                <element signature="e#943#972#0#PHP" expanded="true" />
+                <element signature="e#1031#1060#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+            <state relative-caret-position="176">
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -108,11 +107,11 @@
         <option value="$PROJECT_DIR$/web/css/base.css" />
         <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Event.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/selector.html.twig" />
         <option value="$PROJECT_DIR$/web/dashboard.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/web/js/dashboard.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
       </list>
     </option>
   </component>
@@ -417,7 +416,7 @@
       <option name="presentableId" value="Default" />
       <updated>1516274754622</updated>
       <workItem from="1516274765528" duration="2321000" />
-      <workItem from="1516277198873" duration="2382000" />
+      <workItem from="1516277198873" duration="2437000" />
     </task>
     <task id="LOCAL-00001" summary="Basic dashboard structure">
       <created>1516278135630</created>
@@ -426,11 +425,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516278135631</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dashboard js">
+      <created>1516282212054</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1516282212054</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4703000" />
+    <option name="totallyTimeSpent" value="4758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1001" extended-state="6" />
@@ -500,7 +506,8 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Basic dashboard structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic dashboard structure" />
+    <MESSAGE value="Dashboard js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -521,7 +528,7 @@
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#40#67#0#PHP" expanded="true" />
-            <element signature="e#943#972#0#PHP" expanded="true" />
+            <element signature="e#1031#1060#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -660,17 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" column="80" lean-forward="false" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="80" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-            <element signature="e#943#972#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
@@ -681,9 +677,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="176">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="50" column="26" lean-forward="false" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+            <element signature="e#1031#1060#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

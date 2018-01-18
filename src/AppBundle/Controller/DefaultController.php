@@ -3,9 +3,11 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Event;
+use JMS\Serializer\SerializationContext;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -34,6 +36,19 @@ class DefaultController extends Controller
 		$event = $em->getRepository( 'AppBundle:Event' )->findOneById($eventId);
 
 		return $this->render('default/dashboard.html.twig', array("event" => $event));
+	}
+
+	/**
+	 * @Route("/dashboard/{eventId}/data/{obtainedAt}", name="data")
+	 * @param Request $request
+	 */
+	public function dataAction(Request $request, $eventId, $obtainedAt){
+		$em = $this->get( 'doctrine' )->getManager();
+		$infos = $em->getRepository( 'AppBundle:Information' )->findInformation( $eventId, $obtainedAt );
+
+		$context = SerializationContext::create()->setGroups(array('data'));
+		$serializer = $this->get('jms_serializer');
+		return new Response($serializer->serialize($infos, "json", $context));
 	}
 
 }
