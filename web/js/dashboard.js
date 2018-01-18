@@ -10,6 +10,8 @@ $(document).ready(function () {
     sourceActions();
     infoActions();
 
+    dashboards();
+
 });
 
 function commonActions(){
@@ -102,6 +104,27 @@ function infoActions() {
 
     $('#data-displayer').on('click', '.info-element', function(e){
         $( "#content-dialog" ).fadeIn();
+    });
+
+}
+
+function dashboards(){
+
+    var infoSelector = $(".info-selector");
+    var buloSelector = $(".bulo-selector");
+
+    $(".tab").click(function (x) {
+        infoSelector.toggleClass('active-tab');
+        buloSelector.toggleClass('active-tab');
+        $("#information").toggleClass("bulo-tab", 0);
+    });
+
+    infoSelector.click(function (x) {
+        $("#data-displayer").slideDown(100);
+    });
+
+    buloSelector.click(function (x) {
+        $("#data-displayer").slideUp(100);
     });
 
 }

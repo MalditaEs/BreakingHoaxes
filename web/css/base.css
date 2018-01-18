@@ -129,9 +129,32 @@ h5 {
     border-bottom: 2px solid #494949;
 }
 
+#information header ul li{
+    cursor: pointer;
+}
+
 #information header ul li:first-child{
     margin-right: 18px;
+}
+
+.active-tab{
     border-bottom: 2px solid #494949;
+}
+
+.bulo-tab{
+    background-color: #D0021B !important;
+
+}
+.bulo-tab header{
+    color: white !important;
+}
+
+.bulo-tab header ul{
+    border-bottom: 2px solid white !important;
+}
+
+.bulo-tab .active-tab{
+    border-bottom: 2px solid white;
 }
 
 .sources-wrap {
@@ -153,6 +176,7 @@ h5 {
 
 .info-image {
     width: 64px;
+    border-radius: 50%;
 }
 
 .info-element {

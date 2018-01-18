@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18dce6ef-2963-4e73-9f02-7be43ead220b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/images/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Misinformation.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
       <change beforePath="$PROJECT_DIR$/web/css/base.css" afterPath="$PROJECT_DIR$/web/css/base.css" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="44" column="75" lean-forward="false" selection-start-line="44" selection-start-column="75" selection-end-line="44" selection-end-column="75" />
+            <state relative-caret-position="638">
+              <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -56,8 +56,8 @@
       <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="125" column="4" lean-forward="false" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+            <state relative-caret-position="333">
+              <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,13 +66,23 @@
       <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="563">
+              <caret line="129" column="1" lean-forward="false" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
               <folding>
-                <marker date="1516290688000" expanded="true" signature="1634:1876" ph="..." />
-                <marker date="1516290688000" expanded="true" signature="1682:1762" ph="..." />
-                <marker date="1516290688000" expanded="true" signature="1807:1855" ph="..." />
+                <marker date="1516295693000" expanded="true" signature="1653:1895" ph="..." />
+                <marker date="1516295693000" expanded="true" signature="1701:1781" ph="..." />
+                <marker date="1516295693000" expanded="true" signature="1826:1874" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Misinformation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Misinformation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="175" column="1" lean-forward="false" selection-start-line="175" selection-start-column="1" selection-end-line="175" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,8 +113,11 @@
       <find>header-title</find>
       <find>sources</find>
       <find>image-source</find>
-      <find>conso</find>
       <find>ul</find>
+      <find>info-image</find>
+      <find>ul li</find>
+      <find>border-bottom: 2px</find>
+      <find>conso</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,9 +148,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Information.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/web/js/dashboard.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/web/css/base.css" />
+        <option value="$PROJECT_DIR$/web/js/dashboard.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Misinformation.php" />
       </list>
     </option>
   </component>
@@ -350,9 +364,9 @@
       <recent name="$PROJECT_DIR$/web/js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Entity" />
       <recent name="$PROJECT_DIR$/web/images" />
       <recent name="$PROJECT_DIR$/web/css" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -454,7 +468,7 @@
       <option name="presentableId" value="Default" />
       <updated>1516274754622</updated>
       <workItem from="1516274765528" duration="2321000" />
-      <workItem from="1516277198873" duration="11356000" />
+      <workItem from="1516277198873" duration="13797000" />
     </task>
     <task id="LOCAL-00001" summary="Basic dashboard structure">
       <created>1516278135630</created>
@@ -491,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516288162066</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fist styling dashboard">
+      <created>1516294171852</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1516294171852</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13677000" />
+    <option name="totallyTimeSpent" value="16118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1680" height="999" extended-state="6" />
@@ -508,14 +529,14 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22587968" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22587968" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25274727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32967836" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -568,7 +589,8 @@
     <MESSAGE value="Dashboard js" />
     <MESSAGE value="Add missing endpoint" />
     <MESSAGE value="Add fields to Information, export source types" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add fields to Information, export source types" />
+    <MESSAGE value="Fist styling dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fist styling dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -737,30 +759,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1516290688000" expanded="true" signature="1634:1876" ph="..." />
-            <marker date="1516290688000" expanded="true" signature="1682:1762" ph="..." />
-            <marker date="1516290688000" expanded="true" signature="1807:1855" ph="..." />
-          </folding>
+        <state relative-caret-position="638">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="125" column="4" lean-forward="false" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+        <state relative-caret-position="333">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="44" column="75" lean-forward="false" selection-start-line="44" selection-start-column="75" selection-end-line="44" selection-end-column="75" />
+        <state relative-caret-position="563">
+          <caret line="129" column="1" lean-forward="false" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
+          <folding>
+            <marker date="1516295693000" expanded="true" signature="1653:1895" ph="..." />
+            <marker date="1516295693000" expanded="true" signature="1701:1781" ph="..." />
+            <marker date="1516295693000" expanded="true" signature="1826:1874" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Misinformation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="175" column="1" lean-forward="false" selection-start-line="175" selection-start-column="1" selection-end-line="175" selection-end-column="1" />
           <folding />
         </state>
       </provider>
