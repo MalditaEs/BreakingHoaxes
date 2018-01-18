@@ -2,12 +2,21 @@ var ignored = [];
 
 $(document).ready(function () {
 
+    commonActions();
+
     pullData();
     setInterval(pullData, 6000);
 
     sourceActions();
+    infoActions();
 
 });
+
+function commonActions(){
+    $("#close-dialog").click(function (f) {
+        $("#content-dialog").fadeOut();
+    });
+}
 
 function pullData() {
     var dashboard = $("#dashboard-js").attr('data-dashboard');
@@ -87,4 +96,12 @@ function source(source) {
             }
         });
     }
+}
+
+function infoActions() {
+
+    $('#data-displayer').on('click', '.info-element', function(e){
+        $( "#content-dialog" ).fadeIn();
+    });
+
 }
