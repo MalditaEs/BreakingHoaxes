@@ -5,7 +5,6 @@ namespace AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Annotation\MaxDepth;
 
 /**
  * Source
@@ -42,6 +41,7 @@ class Source {
 	private $image;
 
 	/**
+	 * @Serializer\Groups({"data"})
 	 * @ORM\ManyToOne(targetEntity="AppBundle\Entity\SourceTypes", inversedBy="sources")
 	 * @ORM\JoinColumn(name="sourcetype_id", referencedColumnName="id")
 	 */

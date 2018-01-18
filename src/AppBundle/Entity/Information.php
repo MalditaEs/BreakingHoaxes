@@ -4,8 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 /**
  * Information
@@ -24,6 +22,12 @@ class Information
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
 	private $id;
+
+	/**
+	 * @Serializer\Groups({"data"})
+	 * @ORM\Column(type="text", nullable=true)
+	 */
+	private $title;
 
 	/**
 	 * @Serializer\Groups({"data"})
@@ -177,5 +181,20 @@ class Information
 	{
 		return $this->content;
 	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
+
+	/**
+	 * @param mixed $title
+	 */
+	public function setTitle( $title ) {
+		$this->title = $title;
+	}
+
 }
 

@@ -14,7 +14,7 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
 	public function findInformation($eventId, $lastId){
 
 		return $this->createQueryBuilder( 'q' )->where( 'q.event = :event' )->andWhere( 'q.obtainedAt > :last' )
-		            ->setParameters( array( 'event' => $eventId, 'last' => $lastId ) )->orderBy('q.obtainedAt')->setMaxResults(2)->getQuery()->execute();
+		            ->setParameters( array( 'event' => $eventId, 'last' => $lastId ) )->orderBy('q.obtainedAt')->setMaxResults(20)->getQuery()->execute();
 
 	}
 

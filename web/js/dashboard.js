@@ -29,15 +29,21 @@ function showData(data) {
     var parsedData = JSON.parse(data);
 
     $.each(parsedData, function (e) {
+
+        if(this['source']['type']['id'] === 1)
+            console.log(this);
+
         var createdDiv = createDiv();
         $(createdDiv).attr('data-date', this['obtained_at']);
+        $(createdDiv).attr('data-id', this['id']);
         $(createdDiv).attr('data-source-id', this['source']['id']);
         $(createdDiv).find('.info-image').attr('src', this['source']['image']);
-        $(createdDiv).find('.info-content').html(this['content']);
+        if(this['source']['type']['id'] === 2)
+            $(createdDiv).find('.info-content').html(this['content']);
+        else
+            $(createdDiv).find('.info-content').html(this['title']);
         $(createdDiv).hide();
         $(createdDiv).prependTo("#data-displayer");
-        console.log(ignored);
-        console.log($.inArray(this['source']['id'], ignored));
         if($.inArray(this['source']['id'], ignored) === -1)
             $(createdDiv).slideDown();
 
