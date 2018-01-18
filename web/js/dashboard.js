@@ -4,8 +4,11 @@ $(document).ready(function () {
 
     commonActions();
 
-    pullData();
-    setInterval(pullData, 6000);
+    pullInfoData();
+    setInterval(pullInfoData, 6000);
+
+    pullBulosData();
+    setInterval(pullBulosData, 12000);
 
     sourceActions();
     infoActions();
@@ -14,18 +17,17 @@ $(document).ready(function () {
 
 });
 
-function commonActions(){
+function commonActions() {
     $("#close-dialog").click(function (f) {
         $("#content-dialog").fadeOut();
     });
 }
 
-function pullData() {
-    var dashboard = $("#dashboard-js").attr('data-dashboard');
+function pullInfoData() {
     var lastElement = 0;
 
     var infoElement = $('.info-element');
-    if(infoElement.length > 0)
+    if (infoElement.length > 0)
         lastElement = infoElement.attr('data-date');
 
     $.ajax({
@@ -36,28 +38,55 @@ function pullData() {
     });
 }
 
+function pullBulosData() {
+    var lastBuloElement = 0;
+
+    var buloElement = $('.bulo-element');
+    if (buloElement.length > 0)
+        lastBuloElement = buloElement.attr('data-date');
+
+    $.ajax({
+        url: window.location.href + "/bulo/" + lastBuloElement,
+        success: function (data) {
+            showBulosData(data);
+        }
+    });
+}
+
 function showData(data) {
     var parsedData = JSON.parse(data);
 
     $.each(parsedData, function (e) {
-
-        if(this['source']['type']['id'] === 1)
-            console.log(this);
 
         var createdDiv = createDiv();
         $(createdDiv).attr('data-date', this['obtained_at']);
         $(createdDiv).attr('data-id', this['id']);
         $(createdDiv).attr('data-source-id', this['source']['id']);
         $(createdDiv).find('.info-image').attr('src', this['source']['image']);
-        if(this['source']['type']['id'] === 2)
+        if (this['source']['type']['id'] === 2)
             $(createdDiv).find('.info-content').html(this['content']);
         else
             $(createdDiv).find('.info-content').html(this['title']);
         $(createdDiv).hide();
         $(createdDiv).prependTo("#data-displayer");
-        if($.inArray(this['source']['id'], ignored) === -1)
+        if ($.inArray(this['source']['id'], ignored) === -1)
             $(createdDiv).slideDown();
 
+    });
+}
+
+function showBulosData(data) {
+    var parsedData = JSON.parse(data);
+
+    $.each(parsedData, function (e) {
+
+        var createdDiv = createDiv();
+        $(createdDiv).attr('data-date', this['obtained_at']);
+        $(createdDiv).attr('data-id', this['id']);
+        $(createdDiv).find('.info-content').html(this['title']);
+        $(createdDiv).hide();
+        $(createdDiv).prependTo("#bulo-displayer");
+        $(createdDiv).slideDown();
     });
 }
 
@@ -80,20 +109,20 @@ function sourceActions() {
 }
 
 function source(source) {
-    if($(source).hasClass('deactivated')){
+    if ($(source).hasClass('deactivated')) {
 
         ignored.push(parseInt($(source).attr('data-source-id')));
 
         $('.info-element').each(function (x) {
-            if($(this).attr('data-source-id') === $(source).attr('data-source-id')) {
+            if ($(this).attr('data-source-id') === $(source).attr('data-source-id')) {
                 $(this).fadeOut();
             }
         });
-    }else{
-        ignored.splice(ignored.indexOf(parseInt($(source).attr('data-source-id'))),1);
+    } else {
+        ignored.splice(ignored.indexOf(parseInt($(source).attr('data-source-id'))), 1);
 
         $('.info-element').each(function (x) {
-            if($(this).attr('data-source-id') === $(source).attr('data-source-id')) {
+            if ($(this).attr('data-source-id') === $(source).attr('data-source-id')) {
                 $(this).fadeIn();
             }
         });
@@ -102,13 +131,13 @@ function source(source) {
 
 function infoActions() {
 
-    $('#data-displayer').on('click', '.info-element', function(e){
-        $( "#content-dialog" ).fadeIn();
+    $('#data-displayer').on('click', '.info-element', function (e) {
+        $("#content-dialog").fadeIn();
     });
 
 }
 
-function dashboards(){
+function dashboards() {
 
     var infoSelector = $(".info-selector");
     var buloSelector = $(".bulo-selector");
@@ -124,7 +153,9 @@ function dashboards(){
     });
 
     buloSelector.click(function (x) {
-        $("#data-displayer").slideUp(100);
+        $("#data-displayer").slideUp(100, function (anim) {
+            $(".bulo-displayer").slideDown(100);
+        });
     });
 
 }

@@ -43,6 +43,7 @@ class DefaultController extends Controller
 	 * @param Request $request
 	 */
 	public function dataAction(Request $request, $eventId, $obtainedAt){
+
 		$em = $this->get( 'doctrine' )->getManager();
 		$infos = $em->getRepository( 'AppBundle:Information' )->findInformation( $eventId, $obtainedAt );
 
@@ -62,6 +63,19 @@ class DefaultController extends Controller
 		$context = SerializationContext::create()->setGroups(array('data'));
 		$serializer = $this->get('jms_serializer');
 		return new Response($serializer->serialize($infos, "json", $context));
+	}
+
+	/**
+	 * @Route("/dashboard/{eventId}/bulo/{obtainedAt}", name="bulo")
+	 * @param Request $request
+	 */
+	public function buloAction(Request $request, $eventId, $obtainedAt){
+		$em = $this->get( 'doctrine' )->getManager();
+		$bulos = $em->getRepository( 'AppBundle:Misinformation' )->getBulos( $eventId, $obtainedAt );
+
+		$context = SerializationContext::create()->setGroups(array('data'));
+		$serializer = $this->get('jms_serializer');
+		return new Response($serializer->serialize($bulos, "json", $context));
 	}
 
 }
