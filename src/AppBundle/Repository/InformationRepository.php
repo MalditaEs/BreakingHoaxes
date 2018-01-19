@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * InformationRepository
@@ -14,8 +15,19 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
 	public function findInformation($eventId, $lastId){
 
 		return $this->createQueryBuilder( 'q' )->where( 'q.event = :event' )->andWhere( 'q.obtainedAt > :last' )
-		            ->setParameters( array( 'event' => $eventId, 'last' => $lastId ) )->orderBy('q.obtainedAt')->setMaxResults(20)->getQuery()->execute();
+		            ->setParameters( array( 'event' => $eventId, 'last' => $lastId ) )->orderBy('q.obtainedAt')->setMaxResults(10)->getQuery()->execute();
 
+	}
+
+	public function searchInformation($query, $limit){
+
+		$rsm = new ResultSetMappingBuilder($this->getEntityManager());
+		$rsm->addRootEntityFromClassMetadata( 'AppBundle\Entity\Information', 'i' );
+		$sql = $this->getEntityManager()->createNativeQuery( "SELECT * FROM information WHERE MATCH(title, content) AGAINST(:params IN BOOLEAN MODE) LIMIT :limit", $rsm );
+		$sql->setParameter( ':params', $query );
+		$sql->setParameter( ':limit', $limit);
+
+		return $sql->getResult();
 	}
 
 }

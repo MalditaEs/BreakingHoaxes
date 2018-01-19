@@ -6,6 +6,12 @@
 
     <div id="content-dialog">
         <i id="close-dialog" class="fa fa-times" aria-hidden="true"></i>
+        <h2 class="dialog-title"></h2>
+        <div class="dialog-content"></div>
+    </div>
+
+    <div id="search-dialog">
+        <i id="close-dialog-search" class="fa fa-times" aria-hidden="true"></i>
     </div>
 
     <header id="dashboard-header">
@@ -22,31 +28,28 @@
             <header>Fuentes</header>
 
             <div class="sources-official sources-wrap">
-                <h5 class="type-source">Fuentes oficiales</h5>
+                <h5 class="type-source">Fuentes oficiales <i class="fa fa-eye-slash action-official" aria-hidden="true"></i></h5>
                 {% for source in event.sources %}
                     {% if source.credibility.id == 1 %}
-                        <img class="image-source" src="{{ source.image }}" data-source-id="{{ source.id }}"
-                             data-show="1"/>
+                        <img class="image-source" src="{{ source.image }}" data-source-id="{{ source.id }}" data-show="1"/>
                     {% endif %}
                 {% endfor %}
             </div>
 
             <div class="sources-mb">
-                <h5 class="type-source">Fuentes aprobadas medios</h5>
+                <h5 class="type-source">Fuentes aprobadas medios <i class="fa fa-eye-slash action-approved" aria-hidden="true"></i></h5>
                 {% for source in event.sources %}
                     {% if source.credibility.id == 2 %}
-                        <img class="image-source" src="{{ source.image }}" data-source-id="{{ source.id }}"
-                             data-show="1"/>
+                        <img class="image-source" src="{{ source.image }}" data-source-id="{{ source.id }}"  data-show="1"/>
                     {% endif %}
                 {% endfor %}
             </div>
 
             <div class="sources-newroom">
-                <h5 class="type-source">Fuentes aprobadas pie de calle</h5>
+                <h5 class="type-source">Fuentes aprobadas pie de calle <i class="fa fa-eye-slash action-ground" aria-hidden="true"></i></h5>
                 {% for source in event.sources %}
                     {% if source.credibility.id == 3 %}
-                        <img class="image-source" src="{{ source.image }}" data-source-id="{{ source.id }}"
-                             data-show="1"/>
+                        <img class="image-source" src="{{ source.image }}" data-source-id="{{ source.id }}" data-show="1"/>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -55,6 +58,11 @@
 
         <div id="information">
             <header>
+                <form id="search-form" action="/">
+                    <input class="search-field" placeholder="Buscar…"/>
+                    <input type="submit" id="search_btn" value="SEARCH"/>
+                </form>
+
                 <ul>
                     <li class="info-selector active-tab tab">Información</li>
                     <li class="bulo-selector tab">Bulos</li>

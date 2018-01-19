@@ -66,6 +66,19 @@ class DefaultController extends Controller
 	}
 
 	/**
+	 * @Route("/dashboard/{eventId}/data/search/{query}", name="search_information")
+	 * @param Request $request
+	 */
+	public function searchAction(Request $request, $query){
+		$em = $this->get( 'doctrine' )->getManager();
+		$infos = $em->getRepository( 'AppBundle:Information' )->searchInformation( $query, 5 );
+
+		$context = SerializationContext::create()->setGroups(array('data'));
+		$serializer = $this->get('jms_serializer');
+		return new Response($serializer->serialize($infos, "json", $context));
+	}
+
+	/**
 	 * @Route("/dashboard/{eventId}/bulo/{obtainedAt}", name="bulo")
 	 * @param Request $request
 	 */

@@ -21,6 +21,33 @@ function commonActions() {
     $("#close-dialog").click(function (f) {
         $("#content-dialog").fadeOut();
     });
+
+    $(".action-official").click(function (f) {
+        $(".sources-official").find('.image-source').each(function (x, u) {
+            $(this).toggleClass('deactivated');
+            source(this);
+        });
+    });
+
+    $(".action-approved").click(function (f) {
+        $(".sources-mb").find('.image-source').each(function (x, u) {
+            $(this).toggleClass('deactivated');
+            source(this);
+        });
+    });
+
+    $(".action-ground").click(function (f) {
+        $(".sources-newroom").find('.image-source').each(function (x, u) {
+            $(this).toggleClass('deactivated');
+            source(this);
+        });
+    });
+
+    $('#search-form').submit(function(e){
+        e.preventDefault();
+        performSearch($(".search-field").val());
+    });
+
 }
 
 function pullInfoData() {
@@ -55,6 +82,8 @@ function pullBulosData() {
 
 function showData(data) {
     var parsedData = JSON.parse(data);
+
+    console.log("IGNORED TOTAL: " + ignored);
 
     $.each(parsedData, function (e) {
 
@@ -112,6 +141,7 @@ function source(source) {
     if ($(source).hasClass('deactivated')) {
 
         ignored.push(parseInt($(source).attr('data-source-id')));
+        console.log("adding " + parseInt($(source).attr('data-source-id')));
 
         $('.info-element').each(function (x) {
             if ($(this).attr('data-source-id') === $(source).attr('data-source-id')) {
@@ -121,18 +151,35 @@ function source(source) {
     } else {
         ignored.splice(ignored.indexOf(parseInt($(source).attr('data-source-id'))), 1);
 
+        console.log("deleting " + parseInt($(source).attr('data-source-id')));
+
         $('.info-element').each(function (x) {
             if ($(this).attr('data-source-id') === $(source).attr('data-source-id')) {
                 $(this).fadeIn();
             }
         });
     }
+
+    ignored = ignored.filter(onlyUnique);
+
 }
 
 function infoActions() {
 
     $('#data-displayer').on('click', '.info-element', function (e) {
-        $("#content-dialog").fadeIn();
+
+        var dataId = $(this).attr('data-id');
+        $.ajax({
+            url: window.location.href + "/data/information/" + dataId,
+            success: function (data) {
+                data = JSON.parse(data);
+                var dialog = $("#content-dialog");
+                dialog.find('.dialog-title').text(data['title']);
+                dialog.find('.dialog-content').html(data['content']);
+                window.scrollTo(0,0);
+                dialog.fadeIn();
+            }
+        });
     });
 
 }
@@ -157,5 +204,33 @@ function dashboards() {
             $(".bulo-displayer").slideDown(100);
         });
     });
+}
 
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+
+function performSearch(query) {
+    $.ajax({
+        url: window.location.href + "/data/search/" + query,
+        success: function (results) {
+
+            results = JSON.parse(results);
+            var dialog = $("#search-dialog");
+
+            console.dir(results);
+
+            $.each(results, function (x) {
+                if(this['title'] !== undefined)
+                    dialog.append("<div class='search-result'><h3>"+ this['title'] +"</h3></div>");
+                else
+                    dialog.append("<div class='search-result'><h3>"+ this['content'] +"</h3></div>");
+            });
+
+            /*dialog.find('.dialog-title').text(data['title']);
+            dialog.find('.dialog-content').html(data['content']);*/
+            window.scrollTo(0,0);
+            dialog.fadeIn();
+        }
+    });
 }
