@@ -126,19 +126,20 @@ function showData(data) {
 }
 
 function showBulosData(data) {
+
     var parsedData = JSON.parse(data);
 
     $.each(parsedData, function (e) {
         var createdDiv = createBuloElementDiv();
         $(createdDiv).attr('data-date', this['obtained_at']);
         $(createdDiv).attr('data-id', this['id']);
-        $(createdDiv).find('.information-content').text(this['title']);
+        $(createdDiv).find('.information-content').text(this['title'] + " - " + this['content']);
         $(createdDiv).find('.information-date').text(this['obtained_at']);
         $(createdDiv).hide();
         $(createdDiv).prependTo("#bulo-displayer");
         $(createdDiv).slideDown();
 
-        notifications(this['title']);
+        notifications(this['title'], this['content']);
     });
 
 }
@@ -313,46 +314,51 @@ function performSearch(query) {
 
                 $(createdDiv).appendTo("#search-dialog");
 
-
-                $.ajax({
-                    url: window.location.href + "/data/search/" + query,
-                    success: function (results) {
-
-                        results = JSON.parse(results);
-                        var dialog = $("#search-dialog");
-
-                        $.each(results, function (x) {
-
-                            var createdDiv = searchElementDiv('search-result');
-
-                            $(createdDiv).attr('data-date', this['obtained_at']);
-                            $(createdDiv).attr('data-id', this['id']);
-                            $(createdDiv).attr('data-type', this['source']['type']['id']);
-                            $(createdDiv).attr('data-source-id', this['source']['id']);
-                            $(createdDiv).find('.info-image').attr('src', this['source']['image']);
-                            if (this['source']['type']['id'] === 2)
-                                $(createdDiv).find('.info-content').html(this['content']);
-                            else
-                                $(createdDiv).find('.info-content').html(this['title']);
-                            $(createdDiv).hide();
-                            $(createdDiv).appendTo("#search-dialog");
-                            if ($.inArray(this['source']['id'], ignored) === -1)
-                                $(createdDiv).slideDown();
-
-                        });
-
-                        dialog.slideDown();
-                    }
-                });
-
+                var dialog = $("#search-dialog");
+                dialog.slideDown();
             });
+        },
+        complete: function (ar) {
+            performInfoSearch(query);
         }
     });
 
 
 }
 
-function notifications(bulo) {
+function performInfoSearch(query) {
+
+    $.ajax({
+        url: window.location.href + "/data/search/" + query,
+        success: function (results) {
+
+            results = JSON.parse(results);
+
+            $.each(results, function (x) {
+
+                var createdDiv = searchElementDiv('search-result');
+
+                $(createdDiv).attr('data-date', this['obtained_at']);
+                $(createdDiv).attr('data-id', this['id']);
+                $(createdDiv).attr('data-type', this['source']['type']['id']);
+                $(createdDiv).attr('data-source-id', this['source']['id']);
+                $(createdDiv).find('.info-image').attr('src', this['source']['image']);
+                if (this['source']['type']['id'] === 2)
+                    $(createdDiv).find('.info-content').html(this['content']);
+                else
+                    $(createdDiv).find('.info-content').html(this['title']);
+                $(createdDiv).appendTo("#search-dialog");
+            });
+
+            var dialog = $("#search-dialog");
+            dialog.slideDown();
+        }
+    });
+
+
+}
+
+function notifications(title, body) {
 
     Notification.requestPermission().then(function (permission) {
 
@@ -365,10 +371,11 @@ function notifications(bulo) {
         }
 
         var notifOptions = {
-            body: bulo,
+            body: body,
             icon: "/images/logos/mblogo.jpg"
         };
-        var notification = new Notification("NUEVO BULO", notifOptions);
+
+        var notification = new Notification(title, notifOptions);
 
     });
 
