@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="18dce6ef-2963-4e73-9f02-7be43ead220b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Event.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Event.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Information.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Information.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Misinformation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Misinformation.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Source.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Source.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/SourceTypes.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/SourceTypes.php" />
+      <change beforePath="$PROJECT_DIR$/web/css/base.css" afterPath="$PROJECT_DIR$/web/css/base.css" />
+      <change beforePath="$PROJECT_DIR$/web/js/dashboard.js" afterPath="$PROJECT_DIR$/web/js/dashboard.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,6 +19,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="48" column="72" lean-forward="false" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InformationRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="25" column="130" lean-forward="false" selection-start-line="25" selection-start-column="130" selection-end-line="25" selection-end-column="130" />
+              <folding>
+                <marker date="1516372328000" expanded="true" signature="860:959" ph="SELECT * FRO... information" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Misinformation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Misinformation.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -57,13 +74,23 @@
       <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="365" column="63" lean-forward="false" selection-start-line="365" selection-start-column="63" selection-end-line="365" selection-end-column="63" />
+            <state relative-caret-position="43">
+              <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
               <folding>
-                <marker date="1516369890000" expanded="true" signature="4090:4359" ph="..." />
-                <marker date="1516369890000" expanded="true" signature="4138:4218" ph="..." />
-                <marker date="1516369890000" expanded="true" signature="4263:4338" ph="..." />
+                <marker date="1516372261000" expanded="true" signature="4093:4362" ph="..." />
+                <marker date="1516372261000" expanded="true" signature="4141:4221" ph="..." />
+                <marker date="1516372261000" expanded="true" signature="4266:4341" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/base.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="372" column="17" lean-forward="false" selection-start-line="372" selection-start-column="17" selection-end-line="372" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,43 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Source.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Source.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="212" column="5" lean-forward="false" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="370">
+              <caret line="84" column="14" lean-forward="false" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -168,10 +163,10 @@
       <find>#information header ul li:first-child</find>
       <find>search</find>
       <find>BULOS</find>
-      <find>dialog</find>
       <find>bulo</find>
       <find>notifications(</find>
       <find>framework</find>
+      <find>dialog</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,14 +191,11 @@
         <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/web/dashboard.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Doctrine/MatchAgainst.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/selector.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/MisinformationRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/web/css/base.css" />
-        <option value="$PROJECT_DIR$/web/js/dashboard.js" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Source.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Event.php" />
@@ -211,6 +203,9 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/SourceTypes.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Information.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/web/js/dashboard.js" />
+        <option value="$PROJECT_DIR$/web/css/base.css" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php" />
       </list>
     </option>
   </component>
@@ -620,11 +615,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516366761213</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Backend">
+      <created>1516371565625</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1516371565625</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43430000" />
+    <option name="totallyTimeSpent" value="45754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="999" extended-state="6" />
@@ -637,7 +639,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22020431" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22020431" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17948718" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -722,7 +724,8 @@
     <MESSAGE value="Implement search" />
     <MESSAGE value="Move css to base" />
     <MESSAGE value="Search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search" />
+    <MESSAGE value="Backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -834,7 +837,7 @@
         <state relative-caret-position="512">
           <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding>
-            <marker date="1516324040000" expanded="true" signature="860:959" ph="SELECT * FRO... information" />
+            <marker date="1516372328000" expanded="true" signature="860:959" ph="SELECT * FRO... information" />
           </folding>
         </state>
       </provider>
@@ -861,18 +864,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="85" column="72" lean-forward="false" selection-start-line="85" selection-start-column="72" selection-end-line="85" selection-end-column="72" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="false" />
-            <element signature="e#628#645#1#PHP" expanded="false" />
-            <element signature="e#691#719#0#PHP" expanded="false" />
-            <element signature="e#1014#1031#1#PHP" expanded="false" />
-            <element signature="e#1082#1111#0#PHP" expanded="false" />
-            <element signature="e#1398#1421#1#PHP" expanded="false" />
-            <element signature="e#1908#1931#1#PHP" expanded="false" />
-            <element signature="e#2406#2429#1#PHP" expanded="false" />
-            <element signature="e#2973#2999#1#PHP" expanded="false" />
-            <element signature="e#3477#3503#1#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -905,7 +897,7 @@
         <state relative-caret-position="372">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#12#26#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -915,9 +907,9 @@
         <state relative-caret-position="150">
           <caret line="363" column="0" lean-forward="true" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
           <folding>
-            <marker date="1516369890000" expanded="true" signature="4090:4359" ph="..." />
-            <marker date="1516369890000" expanded="true" signature="4138:4218" ph="..." />
-            <marker date="1516369890000" expanded="true" signature="4263:4338" ph="..." />
+            <marker date="1516372261000" expanded="true" signature="4093:4362" ph="..." />
+            <marker date="1516372261000" expanded="true" signature="4141:4221" ph="..." />
+            <marker date="1516372261000" expanded="true" signature="4266:4341" ph="..." />
           </folding>
         </state>
       </provider>
@@ -952,18 +944,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="false" />
-            <element signature="e#628#645#1#PHP" expanded="false" />
-            <element signature="e#691#719#0#PHP" expanded="false" />
-            <element signature="e#1014#1031#1#PHP" expanded="false" />
-            <element signature="e#1082#1111#0#PHP" expanded="false" />
-            <element signature="e#1398#1421#1#PHP" expanded="false" />
-            <element signature="e#1908#1931#1#PHP" expanded="false" />
-            <element signature="e#2406#2429#1#PHP" expanded="false" />
-            <element signature="e#2973#2999#1#PHP" expanded="false" />
-            <element signature="e#3477#3503#1#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,16 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <marker date="1516324040000" expanded="true" signature="860:959" ph="SELECT * FRO... information" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/MisinformationRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -1076,33 +1047,6 @@
           <folding>
             <marker date="1516365840000" expanded="true" signature="837:939" ph="SELECT * FRO... information" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="85" column="72" lean-forward="false" selection-start-line="85" selection-start-column="72" selection-end-line="85" selection-end-column="72" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="false" />
-            <element signature="e#628#645#1#PHP" expanded="false" />
-            <element signature="e#691#719#0#PHP" expanded="false" />
-            <element signature="e#1014#1031#1#PHP" expanded="false" />
-            <element signature="e#1082#1111#0#PHP" expanded="false" />
-            <element signature="e#1398#1421#1#PHP" expanded="false" />
-            <element signature="e#1908#1931#1#PHP" expanded="false" />
-            <element signature="e#2406#2429#1#PHP" expanded="false" />
-            <element signature="e#2973#2999#1#PHP" expanded="false" />
-            <element signature="e#3477#3503#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="371" column="23" lean-forward="false" selection-start-line="371" selection-start-column="23" selection-end-line="371" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1119,19 +1063,7 @@
         <state relative-caret-position="372">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="365" column="63" lean-forward="false" selection-start-line="365" selection-start-column="63" selection-end-line="365" selection-end-column="63" />
-          <folding>
-            <marker date="1516369890000" expanded="true" signature="4090:4359" ph="..." />
-            <marker date="1516369890000" expanded="true" signature="4138:4218" ph="..." />
-            <marker date="1516369890000" expanded="true" signature="4263:4338" ph="..." />
+            <element signature="e#12#26#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1194,9 +1126,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+        <state relative-caret-position="370">
+          <caret line="84" column="14" lean-forward="false" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+          <folding>
+            <marker date="1516372261000" expanded="true" signature="4093:4362" ph="..." />
+            <marker date="1516372261000" expanded="true" signature="4141:4221" ph="..." />
+            <marker date="1516372261000" expanded="true" signature="4266:4341" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="372" column="17" lean-forward="false" selection-start-line="372" selection-start-column="17" selection-end-line="372" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="48" column="72" lean-forward="false" selection-start-line="48" selection-start-column="72" selection-end-line="48" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/InformationRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="130" lean-forward="false" selection-start-line="25" selection-start-column="130" selection-end-line="25" selection-end-column="130" />
+          <folding>
+            <marker date="1516372328000" expanded="true" signature="860:959" ph="SELECT * FRO... information" />
+          </folding>
         </state>
       </provider>
     </entry>

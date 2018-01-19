@@ -374,6 +374,10 @@ h5 {
     font-size: 16px;
 }
 
+#check-displayer, #bulo-displayer{
+    display: none;
+}
+
 .bulo-search-result{
     background-color: #D0021B !important;
 }

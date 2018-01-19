@@ -113,7 +113,7 @@ function showData(data) {
         if (this['source']['type']['id'] === 2)
             $(createdDiv).find('.information-content').text(this['content']);
         else
-            $(createdDiv).find('.information-date').text(this['title']);
+            $(createdDiv).find('.information-content').text(this['title']);
 
         $(createdDiv).find('.information-date').text(this['obtained_at']);
 
@@ -210,7 +210,7 @@ function infoActions() {
 
         var type = $(this).attr('data-type');
 
-        if ($(this).attr('data-type') === 1) {
+        if ($(this).attr('data-type') == 1) {
 
             var dataId = $(this).attr('data-id');
             $.ajax({
