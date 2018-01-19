@@ -6,6 +6,7 @@ use AppBundle\Entity\Event;
 use JMS\Serializer\SerializationContext;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -72,6 +73,22 @@ class DefaultController extends Controller
 	public function searchAction(Request $request, $query){
 		$em = $this->get( 'doctrine' )->getManager();
 		$infos = $em->getRepository( 'AppBundle:Information' )->searchInformation( $query, 5 );
+
+		if(count($infos) == 0)
+			return new JsonResponse( "" );
+
+		$context = SerializationContext::create()->setGroups(array('data'));
+		$serializer = $this->get('jms_serializer');
+		return new Response($serializer->serialize($infos, "json", $context));
+	}
+
+	/**
+	 * @Route("/dashboard/{eventId}/bulo/search/{query}", name="search_bulo")
+	 * @param Request $request
+	 */
+	public function buloSearchAction(Request $request, $query){
+		$em = $this->get( 'doctrine' )->getManager();
+		$infos = $em->getRepository( 'AppBundle:Misinformation' )->searchBulos( $query, 5 );
 
 		$context = SerializationContext::create()->setGroups(array('data'));
 		$serializer = $this->get('jms_serializer');

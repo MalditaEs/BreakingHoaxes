@@ -10,10 +10,6 @@
         <div class="dialog-content"></div>
     </div>
 
-    <div id="search-dialog">
-        <i id="close-dialog-search" class="fa fa-times" aria-hidden="true"></i>
-    </div>
-
     <header id="dashboard-header">
         <div class="logos"><img src="{{ asset('images/logo.png') }}"/></div>
         <div class="header-title">
@@ -25,7 +21,7 @@
     <div class="content">
 
         <div id="sources">
-            <header>Fuentes</header>
+            <header>Fuentes <i class="fa fa-caret-down hide-desktop" aria-hidden="true"></i></header>
 
             <div class="sources-official sources-wrap">
                 <h5 class="type-source">Fuentes oficiales <i class="fa fa-eye-slash action-official" aria-hidden="true"></i></h5>
@@ -36,7 +32,7 @@
                 {% endfor %}
             </div>
 
-            <div class="sources-mb">
+            <div class="sources-mb sources-wrap">
                 <h5 class="type-source">Fuentes aprobadas medios <i class="fa fa-eye-slash action-approved" aria-hidden="true"></i></h5>
                 {% for source in event.sources %}
                     {% if source.credibility.id == 2 %}
@@ -45,7 +41,7 @@
                 {% endfor %}
             </div>
 
-            <div class="sources-newroom">
+            <div class="sources-newroom sources-wrap">
                 <h5 class="type-source">Fuentes aprobadas pie de calle <i class="fa fa-eye-slash action-ground" aria-hidden="true"></i></h5>
                 {% for source in event.sources %}
                     {% if source.credibility.id == 3 %}
@@ -60,19 +56,31 @@
             <header>
                 <form id="search-form" action="/">
                     <input class="search-field" placeholder="Buscar…"/>
-                    <input type="submit" id="search_btn" value="SEARCH"/>
+                    <button type="submit" class="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
 
+                <div id="search-dialog">
+                    <header>
+                        <p>Resultados de la búsqueda: </p>
+                        <i class="fa fa-times close-search" aria-hidden="true"></i>
+                    </header>
+                </div>
+
                 <ul>
-                    <li class="info-selector active-tab tab">Información</li>
+                    <li class="info-selector active-tab tab">Info</li>
                     <li class="bulo-selector tab">Bulos</li>
+                    <li class="verify-selector tab">Check</li>
                 </ul>
             </header>
-            <div id="data-displayer">
 
+            <div id="data-displayer">
             </div>
             <div id="bulo-displayer">
-
+            </div>
+            <div id="check-displayer">
+                <header>Envía una información para que Maldito Bulo la verifique: </header>
+                <textarea rows="20" class="text-bulo-send"></textarea>
+                <button class="send-to-maldita" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar</button>
             </div>
         </div>
 

@@ -3,12 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Index;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Information
  *
- * @ORM\Table(name="misinformation")
+ * @ORM\Table(name="misinformation",  indexes={@Index(columns={"title", "content"}, flags={"fulltext"})})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MisinformationRepository")
  */
 class Misinformation

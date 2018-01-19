@@ -3,22 +3,34 @@
 {% block title %}Selector de eventos{% endblock %}
 {% block body %}
 
+    <header id="dashboard-header">
+        <div class="logos"><img src="{{ asset('images/logo.png') }}"/></div>
+    </header>
+
     <div id="selector">
 
+        <header>Eventos abiertos</header>
+
+        <div id="selector-wrap">
+
         {% for event in events %}
-            <a href="{{ path('dashboard', {'eventId' : event.id }) }}">
-                <div class="event">
-                    <p class="event-name">{{ event.name }}</p>
-                    <p class="event-date">Abierto el {{ event.createdAt|date("d/m/Y") }}</p>
-                </div>
-            </a>
+            <div class="event">
+                <a class="event-link" href="{{ path('dashboard', {'eventId' : event.id }) }}">
+                   {% set imagebackground = event.image %}
+                    <div class="image-event" style="background-image: url({{ asset('/images/events/' ~ imagebackground) }});"></div>
+                    <div class="event-content">
+                        <p class="event-name">{{ event.name }}</p>
+                        <p class="event-date">Abierto el {{ event.createdAt|date("d/m/Y") }}</p>
+                    </div>
+                </a>
+            </div>
         {% endfor %}
 
-
+        </div>
     </div>
 
 {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}"/>
 {% endblock %}

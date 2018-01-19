@@ -177,6 +177,19 @@ class Event
 		return $this->closedAt;
 	}
 
+	/**
+	 * @return mixed
+	 */
+	public function getImage() {
+		return $this->image;
+	}
+
+	/**
+	 * @param mixed $image
+	 */
+	public function setImage( $image ) {
+		$this->image = $image;
+	}
 
 }
 

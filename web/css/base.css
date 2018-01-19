@@ -46,12 +46,12 @@ h5 {
 }
 
 .event {
-    background-color: #f5f5f5;
+    background-color: white;
     display: block;
-    padding: 20px;
-    width: 500px;
-    margin: 0 auto;
+    width: 30%;
     text-align: center;
+    height: 278px;
+    margin: 0 10px;
 }
 
 #dashboard-header {
@@ -96,11 +96,30 @@ h5 {
     font-family: "Roboto", sans-serif;
 }
 
+#sources header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hide-desktop{
+    display: none !important;
+}
+
+#selector header{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-bottom: 3px solid;
+    margin-bottom: 18px;
+}
+
 #sources .type-source {
     font-size: 14px;
     font-weight: lighter;
     border-bottom: 1px solid white;
     margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #sources header {
@@ -133,7 +152,7 @@ h5 {
     cursor: pointer;
 }
 
-#information header ul li:first-child{
+.tab{
     margin-right: 18px;
 }
 
@@ -182,7 +201,7 @@ h5 {
     border-radius: 50%;
 }
 
-.info-element, .bulo-element {
+.info-element, .bulo-element, .search-element {
     margin: 0 20px;
     border-bottom: 1px solid #808080;
     padding: 20px 0;
@@ -194,13 +213,29 @@ h5 {
 
 .info-content {
     width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-content p{
+    margin: 0;
+}
+
+.information-date{
+    font-size: 12px;
+    color: gray;
 }
 
 .deactivated {
     opacity: 0.1;
 }
 
-#content-dialog, #search-dialog {
+#search-dialog{
+    display: none;
+    margin-bottom: 24px;
+}
+
+#content-dialog {
     width: 95%;
     min-height: 80%;
     height: auto;
@@ -210,6 +245,7 @@ h5 {
     position: absolute;
     display: none;
 }
+
 
 #close-dialog {
     position: absolute;
@@ -234,4 +270,144 @@ h5 {
     font-size: 14px;
     height: 20px !important;
     font-family: "Roboto", sans-serif;
+}
+#selector{
+    background-color: white;
+    width: auto;
+    min-height: 82%;
+    padding: 20px;
+}
+
+#selector-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.image-event{
+    height: 180px;
+    background-size: cover;
+}
+.event-link{
+    text-decoration: none;
+}
+.event-name{
+    font-size: 26px;
+    margin: 12px 0 0 0;
+    font-weight: bold;
+    color: black;
+}
+.event-name:visited{
+    color: black;
+}
+.event-date{
+    margin: 0;
+    text-transform: uppercase;
+    color: gray;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+}
+#search-form{
+    display: flex;
+    align-items: baseline;
+}
+.search-submit{
+    padding: 10px;
+    margin: 6px;
+    background-color: whitesmoke;
+}
+.search-element{
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.bulo-element .information-content{
+    color: white;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.bulo-element .information-date{
+    color: #d0d0d0;
+}
+
+#check-displayer header{
+    margin-top: 24px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+
+.text-bulo-send {
+    width: 99%;
+}
+
+.send-to-maldita{
+    width: 100%;
+    background-color: #494949;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#search-dialog header p{
+    margin: 0;
+}
+
+#search-dialog header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bulo-search-result .info-image-wrap{
+    display: none;
+}
+
+.bulo-search-result .info-content{
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+}
+
+.bulo-search-result{
+    background-color: #D0021B !important;
+}
+
+@media only screen and (max-width: 600px)  {
+
+    #dashboard-header{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content{
+        flex-direction: column;
+    }
+
+    #sources{
+        width: 90%;
+        margin: 0 auto 10px auto;
+    }
+
+    #information{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .sources-wrap{
+        display: none;
+    }
+
+    .hide-desktop{
+        display: inherit !important;
+    }
+
+    .info-image-wrap{
+        margin-right: 12px;
+    }
 }

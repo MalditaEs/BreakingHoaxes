@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 /**
  * InformationRepository
@@ -13,9 +14,20 @@ class MisinformationRepository extends \Doctrine\ORM\EntityRepository
 
 	public function getBulos($eventId, $lastId){
 
-		return $this->createQueryBuilder( 'q' )->where( 'q.event = :event' )->andWhere( 'q.obtainedAt > :last' )
-		            ->setParameters( array( 'event' => $eventId, 'last' => $lastId ) )->orderBy('q.obtainedAt')->setMaxResults(1)->getQuery()->execute();
+		return $this->createQueryBuilder( 'q' )->where( 'q.event = :event' )->andWhere( 'q.id >= :last' )
+		            ->setParameters( array( 'event' => $eventId, 'last' => $lastId ) )->orderBy('q.id')->setMaxResults(1)->getQuery()->execute();
 
+	}
+
+	public function searchBulos($query, $limit){
+
+		$rsm = new ResultSetMappingBuilder($this->getEntityManager());
+		$rsm->addRootEntityFromClassMetadata( 'AppBundle\Entity\Misinformation', 'i' );
+		$sql = $this->getEntityManager()->createNativeQuery( "SELECT * FROM misinformation WHERE MATCH(title, content) AGAINST(:params IN BOOLEAN MODE) LIMIT :limit", $rsm );
+		$sql->setParameter( ':params', $query );
+		$sql->setParameter( ':limit', $limit);
+
+		return $sql->getResult();
 	}
 
 }
