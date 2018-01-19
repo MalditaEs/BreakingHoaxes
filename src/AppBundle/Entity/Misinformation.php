@@ -174,5 +174,9 @@ class Misinformation
 		$this->title = $title;
 	}
 
+	public function __toString() {
+		return $this->getTitle();
+	}
+
 }
 

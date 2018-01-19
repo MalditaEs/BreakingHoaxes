@@ -208,5 +208,10 @@ class Source {
 		$this->informations = $informations;
 	}
 
+	public function __toString() {
+		return $this->getName();
+	}
+
+
 }
 

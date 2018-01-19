@@ -197,5 +197,9 @@ class Information
 		$this->title = $title;
 	}
 
+	public function __toString() {
+		return "";
+	}
+
 }
 

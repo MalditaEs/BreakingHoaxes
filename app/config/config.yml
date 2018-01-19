@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi: ~
@@ -74,3 +74,16 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+framework:
+    translator: { fallbacks: [ "es" ] }
+
+easy_admin:
+    site_name: 'BreakingHoaxes'
+
+    entities:
+        Event:
+            class: AppBundle\Entity\Event
+            label: "Eventos"
+            list:
+                title: "Eventos"

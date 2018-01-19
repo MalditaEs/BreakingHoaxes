@@ -191,5 +191,9 @@ class Event
 		$this->image = $image;
 	}
 
+	public function __toString() {
+		return $this->getName();
+	}
+
 }
 
